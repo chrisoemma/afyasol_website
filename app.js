@@ -7,6 +7,7 @@ const expressEjsLayouts = require('express-ejs-layouts');
 
 
 var indexRouter = require('./routes/index');
+var policyRouter = require('./routes/privacy-policy');
 
 var app = express();
 
@@ -22,6 +23,7 @@ app.use(cookieParser());
 app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', indexRouter);
+app.use('/privacy-policy',policyRouter)
 
 
 // catch 404 and forward to error handler
